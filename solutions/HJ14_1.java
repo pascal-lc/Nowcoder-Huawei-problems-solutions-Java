@@ -50,10 +50,10 @@ public class HJ14_1 {
             strs[n] = sc.next();
         }
 
-        Arrays.sort(strs);
-
-        for (String str : strs) {
-            System.out.println(str);
-        }
+        // Arrays.sort(strs);
+        // for (String str : strs) {
+        //     System.out.println(str);
+        // }
+        Arrays.stream(strs).sorted().forEach(System.out::println);
     }
 }
