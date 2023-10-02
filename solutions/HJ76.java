@@ -15,17 +15,22 @@ public class HJ76 {
         int[] mArr = new int[m];
         StringBuilder sb = new StringBuilder();
 
-        if (m % 2 == 0) {
-            int m2 = m * m - 1 - ((m / 2) - 1) * 2;
-            for (int i = 0; i < m; i++) {
-                mArr[i] = m2 + i * 2;
-            }
-        } else {
-            int m2 = m * m - (m - 1);
-            for (int i = 0; i < m; i++) {
-                mArr[i] = m2 + i * 2;
-            }
+        int m2 = m * m - (m - 1);
+        for (int i = 0; i < m; i++) {
+            mArr[i] = m2 + i * 2;
         }
+        // if (m % 2 == 0) {
+        //     // int m2 = m * m - 1 - ((m / 2) - 1) * 2;
+        //     int m2 = m * m - (m - 1);
+        //     for (int i = 0; i < m; i++) {
+        //         mArr[i] = m2 + i * 2;
+        //     }
+        // } else {
+        //     int m2 = m * m - (m - 1);
+        //     for (int i = 0; i < m; i++) {
+        //         mArr[i] = m2 + i * 2;
+        //     }
+        // }
         for (int i : mArr) {
             sb.append(i + " ");
         }
