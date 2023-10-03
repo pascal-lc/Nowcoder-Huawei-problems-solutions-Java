@@ -12,12 +12,14 @@ public class HJ76 {
     }
 
     private static String func(int m) {
-        int[] mArr = new int[m];
+        // int[] mArr = new int[m];
         StringBuilder sb = new StringBuilder();
 
         int m2 = m * m - (m - 1);
         for (int i = 0; i < m; i++) {
-            mArr[i] = m2 + i * 2;
+            // mArr[i] = m2 + i * 2;
+            int temp = m2 + i * 2;
+            sb.append(temp + " ");
         }
         // if (m % 2 == 0) {
         //     // int m2 = m * m - 1 - ((m / 2) - 1) * 2;
@@ -31,9 +33,9 @@ public class HJ76 {
         //         mArr[i] = m2 + i * 2;
         //     }
         // }
-        for (int i : mArr) {
-            sb.append(i + " ");
-        }
+        // for (int i : mArr) {
+        //     sb.append(i + " ");
+        // }
         String expression = sb.toString().trim().replaceAll(" ", "+");
         return expression;
     }
