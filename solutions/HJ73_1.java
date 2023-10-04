@@ -4,21 +4,20 @@ public class HJ73_1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNextInt()) {
-            int[] dateArr = new int[3];
+            int[] date = new int[3];
             for (int i = 0; i < 3; i++) {
-                dateArr[i] = sc.nextInt();
+                date[i] = sc.nextInt();
             }
-            int days = countDays(dateArr);
+            int days = countDays(date);
 
             System.out.println(days);
         }
     }
 
-    private static int countDays(int[] dateArr) {
+    private static int countDays(int[] date) {
         int days = 0;
-        int leap = (dateArr[0] % 4 == 0 && dateArr[0] % 100 != 0) || dateArr[0] % 400 == 0 ? 1 : 0;
 
-        switch (dateArr[1]) {
+        switch (date[1]) {
             case 12:
                 days += 30;
             case 11:
@@ -38,15 +37,17 @@ public class HJ73_1 {
             case 4:
                 days += 31;
             case 3:
-                days += 28;
+                days += isLeapYear(date[0]) ? 29 : 28;
             case 2:
                 days += 31;
             case 1:
-                days += dateArr[2];
+                days += date[2];
         }
-        int leap_ = leap == 1 && dateArr[1] > 2 ? 1 : 0;
-        days += leap_;
 
         return days;
+    }
+
+    private static boolean isLeapYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
     }
 }
